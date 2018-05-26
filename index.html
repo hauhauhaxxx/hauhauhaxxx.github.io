@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>hauhauhaxxx official</title>
+	<link href="core/css/style_original.css" rel="stylesheet">
+	<link href="core/logo/letters-2077233_960_720.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+
+<script>
+
+	document.onkeydown = new Function("return false;");
+	
+	//document.onmousedown = new Function("return false;");
+	
+	document.oncontextmenu = new Function("return false;");
+	
+</script>
+
+<body onselectstart="return false"  >
+	<div class="block">
+		<div class="video_block">
+			<div class="pattern bounceInDown"></div>
+			<video id="video" autobuffer loop="" controls="" >
+				<source id="videoSRC" type="video/mp4"> 
+			</video>
+		</div>
+		
+		<div class="animated bounceInDown">
+			<div class="nickname ">hauhauhaxxx</div>
+			<a class="media url" href="https://vk.com/retardluv" target="_blank"><i class="fab fa-vk"></i></a>
+			<a class="media url" href="http://steamcommunity.com/id/hauhauhaxxx/" target="_blank"><i class="fab fa-steam-square"></i></a>
+		</div>
+		
+		<div id="footer" style="position: fixed; bottom: 2px; width: 100%;" >
+			<div style="width: 500px; margin: 0 auto;">
+				
+				<input style="width: 100%; float: left;" id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+				<div id="slider-value" style="float: left; width: 100%; font-family: 'Indie Flower', cursive; font-size: 30px;" />
+			</div>
+			<a id="NameVideo" style="position: fixed;bottom: 15px;right: 20px;color:#ffff" target="_blank"></a>
+		</div>
+		
+		
+	</div>
+
+</body>
+
+<script>
+	
+	var Player, Input, ValueText;
+	
+	function SetVolume(value) {
+		
+		ValueText.innerHTML = value + " %";
+		Player.volume = value / 100;
+	}
+	
+	window.onload = function() {
+		setTimeout(()=> {
+			Player = document.getElementById('video');
+			Input = document.getElementById('vol-control');
+			ValueText = document.getElementById('slider-value');
+			
+			Player.addEventListener('click', () => { Player.play(); })
+			
+			var value = 20;
+			
+			Player.volume = value / 100;
+			Input.value = value;
+			ValueText.innerHTML = value + " %"; 
+			
+			Player.play();
+			
+			function loop() {
+				let open = false,
+				div = document.createElement('div');
+				
+				Object.defineProperty(div, "id", { get: () => { open = true; }});
+				
+				console.log(div);
+				
+				if (open) {
+					try {
+						var e = document.body;
+						e.parentNode.removeChild(e);
+					} catch (e) {}
+				}
+			};
+			
+			setInterval(loop, 100);
+		}, 500);
+	}
+	
+</script>
+
+<script>
+	document.getElementById('videoSRC').src = "core/videosmeshariki - ot vinta.mp4";
+	
+	var NameVideo = document.getElementById('NameVideo');
+	NameVideo.innerHTML = "igor plotnikov -" + " huesos";
+	NameVideo.href = "https://www.youtube.com/watch?v=EepRWMFMx1o";
+	
+</script>
+
+</html>
